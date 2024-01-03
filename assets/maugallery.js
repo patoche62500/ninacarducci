@@ -74,9 +74,7 @@
     wrapItemInColumn(element, columns) {
       if (columns.constructor === Number) {
         element.wrap(
-          `<picture class='item-column mb-4 col-${Math.ceil(
-            12 / columns
-          )}'></picture>`
+          `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
         );
       } else if (columns.constructor === Object) {
         var columnClasses = "";
@@ -95,9 +93,7 @@
         if (columns.xl) {
           columnClasses += ` col-xl-${Math.ceil(12 / columns.xl)}`;
         }
-        element.wrap(
-          `<picture class='item-column mb-4${columnClasses}'></picture>`
-        );
+        element.wrap(`<div class='item-column mb-4${columnClasses}'></div>`);
       } else {
         console.error(
           `Columns should be defined as numbers or objects. ${typeof columns} is not supported.`
